@@ -20,6 +20,7 @@
   const header = document.querySelector('.site-header');
   const mobileToggle = document.querySelector('.mobile-nav-toggle');
   const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+  const mobileDrawerClose = document.querySelector('.mobile-drawer-close');
   const mobileBackdrop = document.querySelector('.mobile-nav-backdrop');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
   
@@ -66,6 +67,7 @@
     if (mobileBackdrop) mobileBackdrop.classList.add('open');
     mobileToggle.classList.add('open');
     mobileToggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('drawer-open');
     document.body.style.overflow = 'hidden';
   }
 
@@ -75,6 +77,7 @@
     if (mobileBackdrop) mobileBackdrop.classList.remove('open');
     mobileToggle.classList.remove('open');
     mobileToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('drawer-open');
     document.body.style.overflow = '';
   }
 
@@ -90,6 +93,10 @@
     });
   }
 
+  if (mobileDrawerClose) {
+    mobileDrawerClose.addEventListener('click', closeMobileNav);
+  }
+
   if (mobileBackdrop) {
     mobileBackdrop.addEventListener('click', closeMobileNav);
   }
@@ -103,6 +110,7 @@
     if (!bookingModal) return;
     bookingModal.classList.add('active');
     bookingModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
     document.body.style.overflow = 'hidden';
 
     // Auto-select preferred room if supplied
@@ -125,6 +133,7 @@
     if (!bookingModal) return;
     bookingModal.classList.remove('active');
     bookingModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
     document.body.style.overflow = '';
   }
 
@@ -353,6 +362,7 @@
     updateLightboxContent();
     lightboxModal.classList.add('active');
     lightboxModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
     document.body.style.overflow = 'hidden';
   }
 
@@ -360,6 +370,7 @@
     if (!lightboxModal) return;
     lightboxModal.classList.remove('active');
     lightboxModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
     document.body.style.overflow = '';
   }
 
@@ -399,6 +410,27 @@
         closeLightbox();
       }
     });
+
+    // Touch Swipe Navigation for Mobile Devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+    lightboxModal.addEventListener('touchstart', function (e) {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+    }, { passive: true });
+
+    lightboxModal.addEventListener('touchend', function (e) {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchEndX = e.changedTouches[0].screenX;
+        const threshold = 40;
+        if (touchEndX < touchStartX - threshold) {
+          nextLightbox(); // Swiped left
+        } else if (touchEndX > touchStartX + threshold) {
+          prevLightbox(); // Swiped right
+        }
+      }
+    }, { passive: true });
   }
 
   // Gallery Category Filtering

@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node scripts/serve.js",
     "test": "node scripts/validate-theme.js",
+    "audit": "node scripts/audit-viewports.js",
     "build:zip": "node scripts/package-theme.js",
     "build:screenshot": "powershell -ExecutionPolicy Bypass -File scripts/create-screenshot.ps1"
   },

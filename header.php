@@ -57,14 +57,15 @@ $phone     = ls_haveli_get_phone();
 
     <!-- Header Actions -->
     <div class="header-cta-group">
-      <button type="button" class="btn btn-primary btn-sm open-booking-modal" aria-haspopup="dialog">
+      <button type="button" class="btn btn-primary btn-sm open-booking-modal header-book-btn" aria-haspopup="dialog">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
           <line x1="16" y1="2" x2="16" y2="6"></line>
           <line x1="8" y1="2" x2="8" y2="6"></line>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
-        <?php esc_html_e('Book Your Stay', 'ls-haveli'); ?>
+        <span class="btn-text-full"><?php esc_html_e('Book Your Stay', 'ls-haveli'); ?></span>
+        <span class="btn-text-short"><?php esc_html_e('Book', 'ls-haveli'); ?></span>
       </button>
 
       <!-- Mobile Hamburger Button -->
@@ -81,8 +82,9 @@ $phone     = ls_haveli_get_phone();
 <div class="mobile-nav-backdrop" id="mobileBackdrop"></div>
 <aside class="mobile-nav-drawer" id="mobileDrawer" aria-label="<?php esc_attr_e('Mobile Navigation', 'ls-haveli'); ?>">
   <div>
-    <div style="margin-bottom: 28px;">
-      <img src="<?php echo esc_url($theme_uri . '/assets/images/logo.svg'); ?>" alt="L S Haveli" style="height: 38px; width: auto;" />
+    <div class="mobile-drawer-header">
+      <img src="<?php echo esc_url($theme_uri . '/assets/images/logo.svg'); ?>" alt="L S Haveli" style="height: 32px; width: auto;" />
+      <button type="button" class="mobile-drawer-close" aria-label="<?php esc_attr_e('Close navigation menu', 'ls-haveli'); ?>">&times;</button>
     </div>
 
     <nav class="mobile-nav-links">
