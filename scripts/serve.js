@@ -1,12 +1,12 @@
 /**
  * Lightweight Zero-Dependency Local Static Server for Previewing L S Haveli
+ * Supports automatic port fallback if port is in use
  */
 
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -38,6 +38,23 @@ const server = http.createServer((req, res) => {
   fs.createReadStream(filePath).pipe(res);
 });
 
-server.listen(PORT, () => {
-  console.log(`L S Haveli Preview Server running at: http://localhost:${PORT}`);
-});
+function startServer(port) {
+  server.once('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`Port ${port} in use, trying port ${port + 1}...`);
+      startServer(port + 1);
+    } else {
+      console.error(err);
+    }
+  });
+
+  server.listen(port, () => {
+    console.log(`\n======================================================`);
+    console.log(`L S HAVELI LIVE PREVIEW RUNNING:`);
+    console.log(`http://localhost:${port}`);
+    console.log(`======================================================\n`);
+  });
+}
+
+const initialPort = parseInt(process.env.PORT, 10) || 3001;
+startServer(initialPort);
