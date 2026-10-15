@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="420" height="80" fill="none">
+  <!-- Rajput Haveli Arch Monogram Icon -->
+  <g transform="translate(4, 6)">
+    <!-- Outer Arch Crest -->
+    <path d="M 34 2 C 24 2, 16 10, 16 18 C 16 23, 10 27, 4 33 C 0 37, 0 45, 0 54 L 68 54 C 68 45, 68 37, 64 33 C 58 27, 52 23, 52 18 C 52 10, 44 2, 34 2 Z" 
+          stroke="#DFBF86" stroke-width="1.5" fill="none" opacity="0.95" />
+    
+    <!-- Scalloped Inner Arch -->
+    <path d="M 34 10 C 28 10, 24 14, 24 20 C 24 24, 20 28, 14 34 C 10 38, 10 44, 10 52 L 58 52 C 58 44, 58 38, 54 34 C 48 28, 44 24, 44 20 C 44 14, 40 10, 34 10 Z" 
+          stroke="#DFBF86" stroke-width="1" fill="#FFFFFF" fill-opacity="0.1" />
+    
+    <!-- Decorative Finial & Sunburst -->
+    <circle cx="34" cy="22" r="3" fill="#DFBF86" />
+    <path d="M 34 14 L 34 17 M 34 27 L 34 30 M 29 22 L 26 22 M 42 22 L 39 22" stroke="#DFBF86" stroke-width="1" stroke-linecap="round" />
+    
+    <!-- Base Plinth -->
+    <line x1="2" y1="57" x2="66" y2="57" stroke="#DFBF86" stroke-width="1.5" />
+    <line x1="8" y1="61" x2="60" y2="61" stroke="#DFBF86" stroke-width="1" opacity="0.6" />
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(86, 0)">
+    <!-- Main Brand Name -->
+    <text x="0" y="38" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="28" font-weight="600" letter-spacing="3.5" fill="#FFFFFF">
+      L S HAVELI
+    </text>
+    
+    <!-- Secondary Descriptor -->
+    <text x="2" y="58" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="8.5" font-weight="500" letter-spacing="3" fill="#E8D1A7">
+      A HERITAGE LAKE VIEW HAVELI
+    </text>
+    <text x="220" y="58" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="7.5" font-weight="400" letter-spacing="1.5" fill="#E5DFD7">
+      · PUSHKAR
+    </text>
+  </g>
+</svg>

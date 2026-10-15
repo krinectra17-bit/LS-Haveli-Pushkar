@@ -1,0 +1,28 @@
+{
+  "name": "ls-haveli-pushkar",
+  "version": "1.0.0",
+  "description": "Premium Boutique Heritage Hotel WordPress Theme & Website for L S Haveli Pushkar, Rajasthan",
+  "main": "index.html",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node scripts/validate-theme.js",
+    "build:zip": "node scripts/package-theme.js",
+    "build:screenshot": "powershell -ExecutionPolicy Bypass -File scripts/create-screenshot.ps1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krinectra17-bit/LS-Haveli-Pushkar.git"
+  },
+  "keywords": [
+    "wordpress-theme",
+    "hotel",
+    "boutique-hotel",
+    "heritage",
+    "pushkar",
+    "rajasthan",
+    "luxury-hospitality",
+    "whatsapp-booking"
+  ],
+  "author": "krinectra17-bit & L S Haveli Team",
+  "license": "GPL-2.0-or-later"
+}

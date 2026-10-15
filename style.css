@@ -1,0 +1,17 @@
+/*
+Theme Name: L S Haveli Pushkar
+Theme URI: https://github.com/krinectra17-bit/LS-Haveli-Pushkar
+Author: krinectra17-bit & L S Haveli Team
+Author URI: https://github.com/krinectra17-bit
+Description: An award-winning, luxury heritage boutique hotel WordPress theme engineered for L S Haveli in Pushkar, Rajasthan. Features authentic Rajasthani Rajput architectural aesthetics, direct WhatsApp room booking engine, interactive photo gallery lightbox, rooftop dining showcase, and comprehensive WordPress Customizer options.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ls-haveli
+Tags: hotel, luxury, heritage, tourism, boutique-stay, custom-colors, custom-header, custom-menu, featured-images, responsive-layout, theme-options, translation-ready
+*/
+
+@import url('assets/css/main.css');
